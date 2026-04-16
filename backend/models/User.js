@@ -1,4 +1,5 @@
 const mongoose= require("mongoose")
+const { type } = require("os")
 const userSchema=mongoose.Schema({
     name:{
         type:String,
@@ -16,6 +17,10 @@ const userSchema=mongoose.Schema({
     mobile:{
         type:Number,
         required:true
+    },
+    role:{
+        type:String,
+        enum:["user","admin"],
     }
 },{timestamps:true})
 
